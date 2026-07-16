@@ -17,14 +17,14 @@ import { RouterOutlet } from '@angular/router';
     Jonathan Donatiu
   </h1>
 
-<nav class="border-2 border-red-500 ">
-  <button class=" rounded-full px-6 py-3 bg-black text-white text-sm">
+<nav class="border-red-500 flex ">
+  <button class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
     Projects
   </button>
-  <button class=" rounded-full px-6 py-3 bg-black text-white text-sm">
+  <button class=" rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
     Gallery
   </button>
-  <button class=" rounded-full px-6 py-3 bg-black text-white text-sm">
+  <button class=" rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
     Contact
   </button>
 </nav>
@@ -545,6 +545,7 @@ Film • Television • Commercials
 
 </div>
 
+<router-outlet></router-outlet>
   `
 })
 export class App {
