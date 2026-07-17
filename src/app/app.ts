@@ -8,7 +8,6 @@ import { RouterOutlet } from '@angular/router';
   template:`
  <div class="min-h-screen bg-[#fafafa] text-neutral-900">
 
-
 <!-- NAV -->
 
 <header class="fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-white/70 backdrop-blur-xl">
@@ -17,178 +16,75 @@ import { RouterOutlet } from '@angular/router';
     Jonathan Donatiu
   </h1>
 
-<nav class="border-red-500 flex ">
-  <button class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
-    Projects
-  </button>
-  <button class=" rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
-    Gallery
-  </button>
-  <button class=" rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
-    Contact
-  </button>
-</nav>
+  <nav class="border-red-500 flex ">
+    <button class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
+      Home
+    </button>
+    <button class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
+      Projects
+    </button>
+    <button class=" rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
+      Gallery
+    </button>
+    <button class=" rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
+      Contact
+    </button>
+  </nav>
 
 </header>
 
-
-
-
-
 <!-- HERO -->
 
+<section class="pt-32 px-8 max-w-7xl mx-auto">
 
-<section class="
-pt-32
-px-8
-max-w-7xl
-mx-auto">
+  <div class="grid lg:grid-cols-2 gap-16 items-center">
 
+  <!-- LEFT -->
 
-<div class="
-grid
-lg:grid-cols-2
-gap-16
-items-center">
+  <div>
+    <p class="text-sm uppercase tracking-[6px] text-neutral-500">Actor / Performer</p>
+    <h2 class="mt-8 text-7xl lg:text-8xl font-bold leading-[0.9]">
+      Creating
+    <br>
+    <span class="text-neutral-400">unforgettable</span>
+    <br>
+      characters.
+    </h2>
 
+    <p class="mt-8 max-w-xl text-lg text-neutral-600">
+      Actor specializing in film,
+      television and stage.
+      Focused on authentic performances
+      and powerful storytelling.
+    </p>
 
-<!-- LEFT -->
+    <div class="flex gap-5 mt-10">
 
+      <button class="px-8 py-4 rounded-full bg-black text-white hover:scale-105 transition">
+        Watch Reel
+      </button>
 
-<div>
+      <button class="px-8 py-4 rounded-full border">
+        View Work
+      </button>
 
+    </div>
 
-<p class="
-text-sm
-uppercase
-tracking-[6px]
-text-neutral-500">
+  </div>
 
-Actor / Performer
+  <!-- IMAGE -->
 
-</p>
+  <div class="relative">
 
+    <div class="absolute inset-0 bg-black/10 rounded-3xl blur-3xl"></div>
+      <img src="./images/home_img.jpg" class="relative rounded-3xl shadow-2xl w-full object-cover">
+    </div>
 
-
-<h2 class="
-mt-8
-text-7xl
-lg:text-8xl
-font-bold
-leading-[0.9]">
-
-Creating
-
-<br>
-
-<span class="text-neutral-400">
-unforgettable
-</span>
-
-<br>
-
-characters.
-
-</h2>
-
-
-
-
-<p class="
-mt-8
-max-w-xl
-text-lg
-text-neutral-600">
-
-Actor specializing in film,
-television and stage.
-Focused on authentic performances
-and powerful storytelling.
-
-</p>
-
-
-
-
-<div class="flex gap-5 mt-10">
-
-
-<button class="
-px-8 py-4
-rounded-full
-bg-black
-text-white
-hover:scale-105
-transition">
-
-Watch Reel
-
-</button>
-
-
-<button class="
-px-8 py-4
-rounded-full
-border">
-
-View Work
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- IMAGE -->
-
-
-<div class="relative">
-
-
-<div class="
-absolute
-inset-0
-bg-black/10
-rounded-3xl
-blur-3xl">
-</div>
-
-
-<img
-src="/actor.jpg"
-class="
-relative
-rounded-3xl
-shadow-2xl
-w-full
-object-cover">
-
-
-</div>
-
-
-</div>
+  </div>
 
 </section>
 
-
-
-
-
-
-
-
-
 <!-- STATS -->
-
 
 <section class="
 px-8
