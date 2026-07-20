@@ -12,21 +12,22 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 
     <header class="fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-white/70 backdrop-blur-xl">
 
-      <h1 class="text-xl font-semibold tracking-widest uppercase">
-        Jonathan Donatiu
+      <h1 class="text-xl font-semibold tracking-widest uppercase bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent">
+          Jonathan Donatiu
       </h1>
 
-      <nav class="border-red-500 flex ">
-        <button routerLink="/" class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
+      <nav class="flex">
+        <button routerLink="/" class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2 cursor-pointer 
+        border-2 border-black hover:border-2 hover:border-red-500">
           Home
         </button>
-        <button routerLink="/projects" class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
+        <button routerLink="/projects" class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2 cursor-pointer border-2 border-black hover:border-2 hover:border-yellow-500">
           Projects
         </button>
-        <button routerLink="/gallery" class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
+        <button routerLink="/gallery" class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2 cursor-pointer border-2 hover:border-2 border-black hover:border-purple-500">
           Gallery
         </button>
-        <button routerLink="/contact" class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2">
+        <button routerLink="/contact" class="rounded-full px-6 py-3 bg-black text-white text-sm mr-2 ml-2 cursor-pointer border-2 border-black hover:border-2 hover:border-green-500">
           Contact
         </button>
       </nav>

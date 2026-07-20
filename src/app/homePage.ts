@@ -38,11 +38,11 @@ import { RouterLink } from "@angular/router";
 
     <div class="flex gap-5 mt-10">
 
-      <button class="px-8 py-4 rounded-full bg-black text-white hover:scale-105 transition">
+      <button class="px-8 py-4 rounded-full bg-black text-white hover:scale-105 transition cursor-pointer border hover:border-red-500">
         Watch Reel
       </button>
 
-      <button class="px-8 py-4 rounded-full border">
+      <button class="px-8 py-4 rounded-full cursor-pointer border hover:border-purple-500">
         View Work
       </button>
 
@@ -55,7 +55,7 @@ import { RouterLink } from "@angular/router";
   <div class="relative">
 
     <div class="absolute inset-0 bg-black/10 rounded-3xl blur-3xl"></div>
-      <img src="./images/home_img.jpg" class="relative rounded-3xl shadow-2xl w-full object-cover">
+      <img src="./images/home_img.jpg" class="relative rounded-3xl shadow-2xl w-full object-cover hover:scale-105 transition duration-500 cursor-pointer">
     </div>
 
   </div>
@@ -134,7 +134,7 @@ import { RouterLink } from "@angular/router";
 
 <div class="group">
 
-<img src="/projectIMG/p1.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50">
+<img src="/projectIMG/p1.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
 
 <div class="mt-5">
 
@@ -152,7 +152,7 @@ import { RouterLink } from "@angular/router";
 
 <div class="group">
 
-<img src="/projectIMG/p2.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50">
+<img src="/projectIMG/p2.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
 
 <h3 class="mt-5 text-2xl font-bold">
     Canvas
@@ -166,10 +166,10 @@ import { RouterLink } from "@angular/router";
 
 <div class="group">
 
-<img src="/projectIMG/p3.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50">
+<img src="/projectIMG/p3.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
 
 <h3 class="mt-5 text-2xl font-bold">
-    Broken Roads
+    LASESIÓN
 </h3>
 
 <p class="text-gray-500">
