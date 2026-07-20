@@ -4,8 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-gallery',
   standalone: true,
   template: `
+  <div class="h-50"></div>
+
     <div class="min-h-screen p-20">
-      <h1 class="text-6xl font-bold">Projects</h1>
+      <h1 class="text-6xl font-bold">Gallery</h1>
       <p class="mt-6 text-neutral-600">
         My acting Images will be here.
       </p>
