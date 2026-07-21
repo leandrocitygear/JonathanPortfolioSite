@@ -4,13 +4,17 @@ import { Component } from '@angular/core';
   selector: 'app-projects',
   standalone: true,
   template: `
-  <div class="h-50"></div>
-    <div class="min-h-screen p-20">
-      <h1 class="text-6xl font-bold">Projects</h1>
-      <p class="mt-6 text-neutral-600">
-        My acting projects will go here.
-      </p>
-    </div>
+  <div class="min-h-screen bg-[#fafafa] text-neutral-900">
+    
+    <h1 class="text-6xl font-bold mt-30">Projects</h1>
+    
+    <section class="min-h-screen border-2 border-black h-20">
+    <article>
+    
+    </article>
+    </section>
+    
+  </div>
   `
 })
 export class projectsPage {}

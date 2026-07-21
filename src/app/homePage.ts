@@ -38,11 +38,11 @@ import { RouterLink } from "@angular/router";
 
     <div class="flex gap-5 mt-10">
 
-      <button class="px-8 py-4 rounded-full bg-black text-white hover:scale-105 transition cursor-pointer border hover:border-red-500">
+      <button class="px-8 py-4 rounded-full bg-black text-white hover:scale-105 transition cursor-pointer hover:bg-gradient-to-r from-red-500">
         Watch Reel
       </button>
 
-      <button class="px-8 py-4 rounded-full cursor-pointer border hover:border-purple-500">
+      <button routerLink="/projects" class="px-8 py-4 rounded-full cursor-pointer border hover:scale-105 transition hover:bg-gradient-to-l from-purple-500 hover:bg-black hover:text-white">
         View Work
       </button>
 
@@ -124,134 +124,91 @@ import { RouterLink } from "@angular/router";
 
 <section class="bg-white rounded-t-[50px] py-24 px-8">
 
-<div class="max-w-7xl mx-auto">
+  <div class="max-w-7xl mx-auto">
 
-<h2 class="text-5xl font-bold mb-12">
-  Selected Work
-</h2>
+    <h2 class="text-5xl font-bold mb-12">
+      Selected Work
+    </h2>
 
-<div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-8">
 
-<div class="group">
+      <div class="group">
 
-<img src="/projectIMG/p1.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
+        <img src="/projectIMG/p1.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
 
-<div class="mt-5">
+        <div class="mt-5">
 
-<h3 class="text-2xl font-bold">
-    Capicú
-</h3>
+          <h3 class="text-2xl font-bold">
+              Capicú
+          </h3>
 
-<p class="text-gray-500">
-    Supporting Actor • 2025
-</p>
+          <p class="text-gray-500">
+              Supporting Actor • 2025
+          </p>
 
-</div>
+        </div>
 
-</div>
+      </div>
 
-<div class="group">
+      <div class="group">
 
-<img src="/projectIMG/p2.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
+        <img src="/projectIMG/p2.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
 
-<h3 class="mt-5 text-2xl font-bold">
-    Canvas
-</h3>
+        <h3 class="mt-5 text-2xl font-bold">
+            Canvas
+        </h3>
 
-<p class="text-gray-500">
-    Lead Actor • 2020
-</p>
+        <p class="text-gray-500">
+            Lead Actor • 2020
+        </p>
 
-</div>
+      </div>
 
-<div class="group">
+      <div class="group">
 
-<img src="/projectIMG/p3.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
+        <img src="/projectIMG/p3.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
 
-<h3 class="mt-5 text-2xl font-bold">
-    LASESIÓN
-</h3>
+        <h3 class="mt-5 text-2xl font-bold">
+            LASESIÓN
+        </h3>
 
-<p class="text-gray-500">
-    Lead Actor • Director • 2021
-</p>
+        <p class="text-gray-500">
+            Lead Actor • Director • 2021
+        </p>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 <!-- SHOWREEL -->
 
-<section class="
-px-8
-py-24
-max-w-7xl
-mx-auto">
+<section class="px-8 py-24 max-w-7xl mx-auto">
 
+  <div class="bg-black rounded-[40px] p-12 text-white flex flex-col md:flex-row justify-between items-center">
 
-<div class="
-bg-black
-rounded-[40px]
-p-12
-text-white
-flex
-flex-col
-md:flex-row
-justify-between
-items-center">
+    <div>
 
+      <h2 class="text-5xl font-bold">
+        Watch Showreel
+      </h2>
 
-<div>
+      <p class="mt-4 text-gray-400">
+        A collection of recent performances.
+      </p>
 
-<h2 class="
-text-5xl
-font-bold">
+    </div>
 
-Watch Showreel
+    <button class="mt-8 md:mt-0 px-10 py-5 rounded-full bg-white text-black cursor-pointer hover:scale-105 transition hover:bg-gradient-to-l from-yellow-500 hover:bg-black hover:text-white">
+      Play Video
+    </button>
 
-</h2>
-
-
-<p class="
-mt-4
-text-gray-400">
-
-A collection of recent performances.
-
-</p>
-
-</div>
-
-
-
-
-<button class="
-mt-8
-md:mt-0
-px-10
-py-5
-rounded-full
-bg-white
-text-black">
-
-▶ Play Video
-
-</button>
-
-
-</div>
-
+  </div>
 
 </section>
-
-
-
-
-
 
 </div>
     `
