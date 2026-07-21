@@ -328,7 +328,7 @@ import { Component } from '@angular/core';
     <!-- VIDEO -->
     <div class="w-full h-120 aspect-video rounded-3xl overflow-hidden shadow-xl bg-neutral-100">
 
-      <iframe class="h-full w-full" src="https://www.youtube.com/embed/nmLfAzkCJE8?si=jlJRCVIRI2jQzfOd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe class="h-full w-full" src="https://www.youtube.com/embed/ny9cwvveL9I?si=7hReF_GzFd-BSAZx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
     </div>
 
