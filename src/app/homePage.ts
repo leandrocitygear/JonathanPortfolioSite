@@ -192,7 +192,7 @@ import { LightboxVideoComponent } from "./lightboxVideoComponent";
 
 <section class="px-8 py-24 max-w-7xl mx-auto">
 
-  <div class="bg-black rounded-[40px] p-12 text-white flex flex-col md:flex-row justify-between items-center bg-gradient-to-tr from-orange-500/40">
+  <div class="bg-black rounded-[40px] p-12 text-white flex flex-col md:flex-row justify-between items-center bg-gradient-to-tr from-orange-500/35">
 
     <div>
 
@@ -206,15 +206,11 @@ import { LightboxVideoComponent } from "./lightboxVideoComponent";
 
     </div>
 
-    <button class="mt-8 md:mt-0 px-10 py-5 rounded-full bg-white text-black cursor-pointer hover:scale-105 transition hover:bg-gradient-to-l hover:from-red-500 hover:bg-black hover:text-white"
+    <button class="mt-8 md:mt-0 px-10 py-5 rounded-full bg-white text-black cursor-pointer hover:scale-105 transition hover:bg-gradient-to-l hover:from-orange-500 hover:bg-black hover:text-white"
     (click)="lightboxVideo.open('https://www.youtube.com/embed/JJ5yZuZezU8?si=Llv6Ur61QDJRa3bb')"
     >
       Play Video
     </button>
-
-    <div class="absolute -right-20 -bottom-20 w-72 h-72
-                          bg-orange-500/30 blur-3xl rounded-full">
-              </div>
 
   </div>
 
