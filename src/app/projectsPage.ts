@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { LightboxComponent } from "./lightboxComponent";
+
 
 @Component({
   selector: 'app-projects',
+  imports: [LightboxComponent],
   standalone: true,
   template: `
   <div class="min-h-screen bg-[#fafafa] text-neutral-900 pt-30">
@@ -14,8 +17,9 @@ import { Component } from '@angular/core';
 
     <img
       src="/projectIMG/p1.jpg"
+      (click)="lightbox.open('/projectIMG/p1.jpg')"
       alt="Capicú project"
-      class="w-120 h-160"
+      class="w-120 h-160 cursor-pointer"
     />
 
   </div>
@@ -62,8 +66,9 @@ import { Component } from '@angular/core';
 
     <img
       src="/projectIMG/p2.jpg"
+      (click)="lightbox.open('/projectIMG/p2.jpg')"
       alt="Canvas project"
-      class="w-120 h-160"
+      class="w-120 h-160 cursor-pointer"
     />
 
   </div>
@@ -110,8 +115,9 @@ import { Component } from '@angular/core';
 
     <img
       src="/projectIMG/p3.jpg"
+      (click)="lightbox.open('/projectIMG/p3.jpg')"
       alt="Lasesion project"
-      class="w-120 h-160"
+      class="w-120 h-160 cursor-pointer"
     />
 
   </div>
@@ -158,8 +164,9 @@ import { Component } from '@angular/core';
 
     <img
       src="/projectIMG/p4.jpg"
+      (click)="lightbox.open('/projectIMG/p4.jpg')"
       alt="The Monolith project"
-      class="w-120 h-160"
+      class="w-120 h-160 cursor-pointer"
     />
 
   </div>
@@ -206,8 +213,9 @@ import { Component } from '@angular/core';
 
     <img
       src="/projectIMG/p5.jpg"
+      (click)="lightbox.open('/projectIMG/p5.jpg')"
       alt="Teeth & glass project"
-      class="w-120 h-160"
+      class="w-120 h-160 cursor-pointer"
     />
 
   </div>
@@ -254,8 +262,9 @@ import { Component } from '@angular/core';
 
     <img
       src="/projectIMG/p6.jpg"
+      (click)="lightbox.open('/projectIMG/p6.jpg')"
       alt="Entre Colmillos project"
-      class="w-120 h-160"
+      class="w-120 h-160 cursor-pointer"
     />
 
   </div>
@@ -302,8 +311,9 @@ import { Component } from '@angular/core';
 
     <img
       src="/projectIMG/p7.jpeg"
+      (click)="lightbox.open('/projectIMG/p7.jpeg')"
       alt="EL Vejigante project"
-      class="w-120 h-160"
+      class="w-120 h-160 cursor-pointer"
     />
 
   </div>
@@ -346,6 +356,9 @@ import { Component } from '@angular/core';
     </section>
     
   </div>
+
+<app-lightbox #lightbox></app-lightbox>
+
   `
 })
 export class projectsPage {}

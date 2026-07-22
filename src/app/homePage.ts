@@ -1,10 +1,12 @@
 import { Component } from "@angular/core";
 import { RouterLink } from "@angular/router";
+import { LightboxComponent } from "./lightboxComponent";
+import { LightboxVideoComponent } from "./lightboxVideoComponent";
 
 @Component({
     selector: 'app-homePage',
     standalone: true,
-    imports: [RouterLink],
+    imports: [RouterLink, LightboxComponent, LightboxVideoComponent],
     template: `
 <div class="min-h-screen bg-[#fafafa] text-neutral-900">
 <!-- HERO -->
@@ -38,7 +40,9 @@ import { RouterLink } from "@angular/router";
 
     <div class="flex gap-5 mt-10">
 
-      <button class="px-8 py-4 rounded-full bg-black text-white hover:scale-105 transition cursor-pointer hover:bg-gradient-to-r from-red-500">
+      <button class="px-8 py-4 rounded-full bg-black text-white hover:scale-105 transition cursor-pointer hover:bg-gradient-to-r from-red-500"
+      (click)="lightboxVideo.open('https://www.youtube.com/embed/JJ5yZuZezU8?si=Llv6Ur61QDJRa3bb')"
+      >
         Watch Reel
       </button>
 
@@ -55,7 +59,7 @@ import { RouterLink } from "@angular/router";
   <div class="relative">
 
     <div class="absolute inset-0 bg-black/10 rounded-3xl blur-3xl"></div>
-      <img src="./images/home_img.jpg" class="relative rounded-3xl shadow-2xl w-full object-cover hover:scale-105 transition duration-500 cursor-pointer">
+      <img src="./images/home_img.jpg" (click)="lightbox.open('./images/home_img.jpg')" class="relative rounded-3xl shadow-2xl w-full object-cover hover:scale-105 transition duration-500 cursor-pointer">
     </div>
 
   </div>
@@ -134,7 +138,7 @@ import { RouterLink } from "@angular/router";
 
       <div class="group">
 
-        <img src="/projectIMG/p1.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
+        <img src="/projectIMG/p1.jpg" (click)="lightbox.open('/projectIMG/p1.jpg')" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
 
         <div class="mt-5">
 
@@ -152,7 +156,7 @@ import { RouterLink } from "@angular/router";
 
       <div class="group">
 
-        <img src="/projectIMG/p2.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
+        <img src="/projectIMG/p2.jpg" (click)="lightbox.open('/projectIMG/p2.jpg')" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
 
         <h3 class="mt-5 text-2xl font-bold">
             Canvas
@@ -166,7 +170,7 @@ import { RouterLink } from "@angular/router";
 
       <div class="group">
 
-        <img src="/projectIMG/p3.jpg" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
+        <img src="/projectIMG/p3.jpg" (click)="lightbox.open('/projectIMG/p3.jpg')" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
 
         <h3 class="mt-5 text-2xl font-bold">
             LASESIÓN
@@ -202,7 +206,9 @@ import { RouterLink } from "@angular/router";
 
     </div>
 
-    <button class="mt-8 md:mt-0 px-10 py-5 rounded-full bg-white text-black cursor-pointer hover:scale-105 transition hover:bg-gradient-to-l from-yellow-500 hover:bg-black hover:text-white">
+    <button class="mt-8 md:mt-0 px-10 py-5 rounded-full bg-white text-black cursor-pointer hover:scale-105 transition hover:bg-gradient-to-l from-yellow-500 hover:bg-black hover:text-white"
+    (click)="lightboxVideo.open('https://www.youtube.com/embed/JJ5yZuZezU8?si=Llv6Ur61QDJRa3bb')"
+    >
       Play Video
     </button>
 
@@ -211,6 +217,9 @@ import { RouterLink } from "@angular/router";
 </section>
 
 </div>
+
+<app-lightbox #lightbox></app-lightbox>
+<app-lightboxVideo #lightboxVideo></app-lightboxVideo>
     `
 })
 export class homePage {}
