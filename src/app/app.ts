@@ -47,6 +47,14 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
         Film • Television • Commercials
       </p>
 
+      <a href="mailto:johnyboyr8@gmail.com" class="mt-5 text-gray-500 hover:bg-gradient-to-r hover:from-orange-500 hover:to-black hover:bg-clip-text hover:text-transparent">
+        email: johnyboyr8@gmail.com
+      </a>
+
+      <a href="tel:+17876793356" class="mt-5 text-gray-500 hover:bg-gradient-to-r hover:from-orange-500 hover:to-black hover:bg-clip-text hover:text-transparent">
+        Tel: 787-679-3356
+      </a>
+
     </footer>
 
   </div>
