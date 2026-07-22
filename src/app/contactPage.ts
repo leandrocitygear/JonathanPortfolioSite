@@ -32,7 +32,8 @@ import { Component } from '@angular/core';
           <!-- LEFT SIDE -->
           <div class="space-y-10">
 
-            <div>
+            <div class="flex gap-6">
+            <div class="block">
               <p class="text-sm text-neutral-500 uppercase tracking-widest mb-2">
                 Email
               </p>
@@ -43,6 +44,20 @@ import { Component } from '@angular/core';
               >
                 johnyboyr8@gmail.com
               </a>
+              </div>
+
+              <div class="block">
+              <p class="text-sm text-neutral-500 uppercase tracking-widest mb-2">
+                Tel
+              </p>
+
+              <a
+                href="tel:+17876793356"
+                class="text-xl md:text-2xl font-medium hover:bg-gradient-to-r hover:from-orange-500 hover:to-black hover:bg-clip-text hover:text-transparent"
+              >
+                787-679-3356
+              </a>
+              </div>
             </div>
 
 
@@ -97,10 +112,12 @@ import { Component } from '@angular/core';
 
           <!-- CONTACT FORM -->
           <form
+            action="https://api.web3forms.com/submit" method="POST"
             class="bg-white border border-neutral-200 rounded-[40px] p-8 md:p-12 shadow-sm"
           >
 
             <div class="space-y-8">
+            <input type="hidden" name="access_key" value="6cfad4b2-ddc8-41d1-8e2e-79b8ac90ab71">
 
               <!-- NAME -->
               <div>
@@ -110,6 +127,7 @@ import { Component } from '@angular/core';
 
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your name"
                   class="w-full border-b border-neutral-300 py-4 outline-none
                          focus:border-black transition-colors duration-300
@@ -126,6 +144,7 @@ import { Component } from '@angular/core';
 
                 <input
                   type="email"
+                  name="email"
                   placeholder="you@example.com"
                   class="w-full border-b border-neutral-300 py-4 outline-none
                          focus:border-black transition-colors duration-300
@@ -142,6 +161,7 @@ import { Component } from '@angular/core';
 
                 <textarea
                   rows="5"
+                  name="message"
                   placeholder="Tell me about your project..."
                   class="w-full border-b border-neutral-300 py-4 outline-none
                          focus:border-black transition-colors duration-300
