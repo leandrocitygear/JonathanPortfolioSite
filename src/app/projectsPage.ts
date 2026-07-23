@@ -22,13 +22,13 @@ import { LightboxComponent } from "./lightboxComponent";
         >
 
           <!-- PROJECT IMAGE -->
-          <div class="overflow-hidden rounded hover:scale-105 transition duration-700 h-100 w-full sm:w-120 h-125 sm:h-160">
+          <div class="overflow-hidden rounded hover:scale-105 transition duration-700 h-100 w-80 sm:w-120 sm:h-160">
 
             <img
               [src]="project.image"
               (click)="lightbox.open(project.image)"
               [alt]="project.title + ' project'"
-              class="w-full sm:w-120 sm:h-160 h-125 cursor-pointer"
+              class="w-80 sm:w-120 sm:h-160 h-100 cursor-pointer"
             />
 
           </div>
