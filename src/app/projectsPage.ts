@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { LightboxComponent } from "./lightboxComponent";
 
 
@@ -6,359 +7,233 @@ import { LightboxComponent } from "./lightboxComponent";
   selector: 'app-projects',
   imports: [LightboxComponent],
   standalone: true,
+
   template: `
+
   <div class="min-h-screen bg-[#fafafa] text-neutral-900 pt-30">
     
-    <section class="min-h-screen">
-   <article class="grid md:grid-cols-3 gap-10 items-center p-6 md:p-10 rounded-[2rem] bg-white border border-neutral-200 shadow-sm hover:shadow-2xl/50 transition duration-500 m-10 hover:bg-gradient-to-tl hover:from-[#ff7f00]/70">
+    <section class="w-full flex flex-col px-4 items-center">
 
-  <!-- PROJECT IMAGE -->
-  <div class="overflow-hidden rounded hover:scale-105 transition duration-700 w-120 h-160">
+      @for (project of projects; track project.title) {
 
-    <img
-      src="/projectIMG/p1.jpg"
-      (click)="lightbox.open('/projectIMG/p1.jpg')"
-      alt="Capicú project"
-      class="w-120 h-160 cursor-pointer"
-    />
+        <article
+          class="w-full max-w-screen-2xl flex flex-col lg:flex-row gap-10 items-center p-6 md:p-10 rounded-[2rem] bg-white border border-neutral-200 shadow-sm hover:shadow-2xl/50 transition duration-500 my-10 overflow-hidden"
+          [class]="project.hoverColor"
+        >
 
-  </div>
+          <!-- PROJECT IMAGE -->
+          <div class="overflow-hidden rounded hover:scale-105 transition duration-700 h-100 w-full sm:w-120 h-125 sm:h-160">
 
+            <img
+              [src]="project.image"
+              (click)="lightbox.open(project.image)"
+              [alt]="project.title + ' project'"
+              class="w-full sm:w-120 sm:h-160 h-125 cursor-pointer"
+            />
 
-  <!-- PROJECT INFORMATION -->
-  <div class="flex flex-col justify-center col-span-2 h-160 w-230">
+          </div>
 
-    <div class="mb-8">
 
-      <h3 class="text-4xl md:text-5xl font-bold tracking-tight">
-        Capicú
-      </h3>
+          <!-- PROJECT INFORMATION -->
+          <div class="flex flex-col justify-center h-auto lg:h-160 w-full lg:flex-1 min-w-0">
 
-      <p class="mt-3 text-lg text-neutral-500">
-        Supporting Actor • 2025
-      </p>
+            <div class="mb-8">
 
-    </div>
+              <h3 class="text-4xl md:text-5xl font-bold tracking-tight">
+                {{ project.title }}
+              </h3>
 
+              <p class="mt-3 text-lg text-neutral-500">
+                {{ project.role }} • {{ project.year }}
+              </p>
 
-    <!-- VIDEO -->
-    <div class="w-full h-120 aspect-video rounded-3xl overflow-hidden shadow-xl bg-neutral-100">
+            </div>
 
-      <iframe class="h-full w-full" src="https://www.youtube.com/embed/wR9k0yib_Gc?si=GKPhrNUo6AjiMEDL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-    </div>
+            <!-- VIDEO -->
+            <div class="w-full max-w-full h-auto lg:h-120 aspect-video rounded-3xl overflow-hidden shadow-xl bg-neutral-100">
 
+              <iframe
+                class="h-full w-full"
+                [src]="project.video"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
 
-    <!-- DESCRIPTION -->
-    <p class="mt-6 text-neutral-500 leading-relaxed">
-      A featured acting project showcasing my role as a supporting actor
-      in the 2025 production of Capicú.
-    </p>
+            </div>
 
-  </div>
 
-</article>
+            <!-- DESCRIPTION -->
+            <p class="mt-6 text-neutral-500 leading-relaxed">
+              {{ project.description }}
+            </p>
 
-   <article class="grid md:grid-cols-3 gap-10 items-center p-6 md:p-10 rounded-[2rem] bg-white border border-neutral-200 shadow-sm hover:shadow-2xl/50 transition duration-500 m-10 hover:bg-gradient-to-tl hover:from-[#fab41b]/70">
+          </div>
 
-  <!-- PROJECT IMAGE -->
-  <div class="overflow-hidden rounded hover:scale-105 transition duration-700 w-120 h-160">
+        </article>
 
-    <img
-      src="/projectIMG/p2.jpg"
-      (click)="lightbox.open('/projectIMG/p2.jpg')"
-      alt="Canvas project"
-      class="w-120 h-160 cursor-pointer"
-    />
-
-  </div>
-
-
-  <!-- PROJECT INFORMATION -->
-  <div class="flex flex-col justify-center col-span-2 h-160 w-230">
-
-    <div class="mb-8">
-
-      <h3 class="text-4xl md:text-5xl font-bold tracking-tight">
-        Canvas
-      </h3>
-
-      <p class="mt-3 text-lg text-neutral-500">
-        Lead Actor • 2020
-      </p>
-
-    </div>
-
-
-    <!-- VIDEO -->
-    <div class="w-full h-120 aspect-video rounded-3xl overflow-hidden shadow-xl bg-neutral-100">
-
-      <iframe class="h-full w-full" src="https://www.youtube.com/embed/QbGVXNp2IoM?si=HvJqo3pi-hEld9Sh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-    </div>
-
-
-    <!-- DESCRIPTION -->
-    <p class="mt-6 text-neutral-500 leading-relaxed">
-      A featured acting project showcasing my role as a Lead actor
-      in the 2020 production of Canvas.
-    </p>
-
-  </div>
-
-</article>
-
-   <article class="grid md:grid-cols-3 gap-10 items-center p-6 md:p-10 rounded-[2rem] bg-white border border-neutral-200 shadow-sm hover:shadow-2xl/50 transition duration-500 m-10 hover:bg-gradient-to-tl hover:from-[#8a4980]/70">
-
-  <!-- PROJECT IMAGE -->
-  <div class="overflow-hidden rounded hover:scale-105 transition duration-700 w-120 h-160">
-
-    <img
-      src="/projectIMG/p3.jpg"
-      (click)="lightbox.open('/projectIMG/p3.jpg')"
-      alt="Lasesion project"
-      class="w-120 h-160 cursor-pointer"
-    />
-
-  </div>
-
-
-  <!-- PROJECT INFORMATION -->
-  <div class="flex flex-col justify-center col-span-2 h-160 w-230">
-
-    <div class="mb-8">
-
-      <h3 class="text-4xl md:text-5xl font-bold tracking-tight">
-        LASESIÓN
-      </h3>
-
-      <p class="mt-3 text-lg text-neutral-500">
-        Lead Actor • Director • 2021
-      </p>
-
-    </div>
-
-
-    <!-- VIDEO -->
-    <div class="w-full h-120 aspect-video rounded-3xl overflow-hidden shadow-xl bg-neutral-100">
-
-      <iframe class="h-full w-full" src="https://www.youtube.com/embed/m57Zj9IaSEo?si=xXAgXNvcFF_QkF0P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-    </div>
-
-
-    <!-- DESCRIPTION -->
-    <p class="mt-6 text-neutral-500 leading-relaxed">
-      A featured acting project showcasing my role as a Lead actor and Director
-      in the 2021 production of LASESIÓN.
-    </p>
-
-  </div>
-
-</article>
-
-   <article class="grid md:grid-cols-3 gap-10 items-center p-6 md:p-10 rounded-[2rem] bg-white border border-neutral-200 shadow-sm hover:shadow-2xl/50 transition duration-500 m-10 hover:bg-gradient-to-tl hover:from-[#000]/70">
-
-  <!-- PROJECT IMAGE -->
-  <div class="overflow-hidden rounded hover:scale-105 transition duration-700 w-120 h-160">
-
-    <img
-      src="/projectIMG/p4.jpg"
-      (click)="lightbox.open('/projectIMG/p4.jpg')"
-      alt="The Monolith project"
-      class="w-120 h-160 cursor-pointer"
-    />
-
-  </div>
-
-
-  <!-- PROJECT INFORMATION -->
-  <div class="flex flex-col justify-center col-span-2 h-160 w-230">
-
-    <div class="mb-8">
-
-      <h3 class="text-4xl md:text-5xl font-bold tracking-tight">
-        The Monolith
-      </h3>
-
-      <p class="mt-3 text-lg text-neutral-500">
-        Lead Actor • 2022
-      </p>
-
-    </div>
-
-
-    <!-- VIDEO -->
-    <div class="w-full h-120 aspect-video rounded-3xl overflow-hidden shadow-xl bg-neutral-100">
-
-      <iframe class="h-full w-full" src="https://www.youtube.com/embed/PmytmH0JD8E?si=fJAPoncuUxBv5__u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-    </div>
-
-
-    <!-- DESCRIPTION -->
-    <p class="mt-6 text-neutral-500 leading-relaxed">
-      A featured acting project showcasing my role as a Lead actor
-      in the 2022 production of The Monolith.
-    </p>
-
-  </div>
-
-</article>
-
-   <article class="grid md:grid-cols-3 gap-10 items-center p-6 md:p-10 rounded-[2rem] bg-white border border-neutral-200 shadow-sm hover:shadow-2xl/50 transition duration-500 m-10 hover:bg-gradient-to-tl hover:from-[#5f0503]/70">
-
-  <!-- PROJECT IMAGE -->
-  <div class="overflow-hidden rounded hover:scale-105 transition duration-700 w-120 h-160">
-
-    <img
-      src="/projectIMG/p5.jpg"
-      (click)="lightbox.open('/projectIMG/p5.jpg')"
-      alt="Teeth & glass project"
-      class="w-120 h-160 cursor-pointer"
-    />
-
-  </div>
-
-
-  <!-- PROJECT INFORMATION -->
-  <div class="flex flex-col justify-center col-span-2 h-160 w-230">
-
-    <div class="mb-8">
-
-      <h3 class="text-4xl md:text-5xl font-bold tracking-tight">
-        TEETH & GLASS
-      </h3>
-
-      <p class="mt-3 text-lg text-neutral-500">
-        Supporting Actor • 2026
-      </p>
-
-    </div>
-
-
-    <!-- VIDEO -->
-    <div class="w-full h-120 aspect-video rounded-3xl overflow-hidden shadow-xl bg-neutral-100">
-
-      <iframe class="h-full w-full" src="https://www.youtube.com/embed/nmLfAzkCJE8?si=jlJRCVIRI2jQzfOd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-    </div>
-
-
-    <!-- DESCRIPTION -->
-    <p class="mt-6 text-neutral-500 leading-relaxed">
-      A featured acting project showcasing my role as a Supporting actor
-      in the 2026 production of TEETH AND GLASS.
-    </p>
-
-  </div>
-
-</article>
-
-   <article class="grid md:grid-cols-3 gap-10 items-center p-6 md:p-10 rounded-[2rem] bg-white border border-neutral-200 shadow-sm hover:shadow-2xl/50 transition duration-500 m-10 hover:bg-gradient-to-tl hover:from-[#ba0001]/70">
-
-  <!-- PROJECT IMAGE -->
-  <div class="overflow-hidden rounded hover:scale-105 transition duration-700 w-120 h-160">
-
-    <img
-      src="/projectIMG/p6.jpg"
-      (click)="lightbox.open('/projectIMG/p6.jpg')"
-      alt="Entre Colmillos project"
-      class="w-120 h-160 cursor-pointer"
-    />
-
-  </div>
-
-
-  <!-- PROJECT INFORMATION -->
-  <div class="flex flex-col justify-center col-span-2 h-160 w-230">
-
-    <div class="mb-8">
-
-      <h3 class="text-4xl md:text-5xl font-bold tracking-tight">
-        Entre Colmillos
-      </h3>
-
-      <p class="mt-3 text-lg text-neutral-500">
-        Supporting Actor • 2023
-      </p>
-
-    </div>
-
-
-    <!-- VIDEO -->
-    <div class="w-full h-120 aspect-video rounded-3xl overflow-hidden shadow-xl bg-neutral-100">
-
-      <iframe class="h-full w-full" src="https://www.youtube.com/embed/uYF2ANUUynQ?si=ZmxgHJeXVNGXQ68p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-    </div>
-
-
-    <!-- DESCRIPTION -->
-    <p class="mt-6 text-neutral-500 leading-relaxed">
-      A featured acting project showcasing my role as a Supporting actor
-      in the 2023 production of Entre Colmillos.
-    </p>
-
-  </div>
-
-</article>
-
-   <article class="grid md:grid-cols-3 gap-10 items-center p-6 md:p-10 rounded-[2rem] bg-white border border-neutral-200 shadow-sm hover:shadow-2xl/50 transition duration-500 m-10 hover:bg-gradient-to-tl hover:from-[#1597f5]/70">
-
-  <!-- PROJECT IMAGE -->
-  <div class="overflow-hidden rounded hover:scale-105 transition duration-700 w-120 h-160">
-
-    <img
-      src="/projectIMG/p7.jpeg"
-      (click)="lightbox.open('/projectIMG/p7.jpeg')"
-      alt="EL Vejigante project"
-      class="w-120 h-160 cursor-pointer"
-    />
-
-  </div>
-
-
-  <!-- PROJECT INFORMATION -->
-  <div class="flex flex-col justify-center col-span-2 h-160 w-230">
-
-    <div class="mb-8">
-
-      <h3 class="text-4xl md:text-5xl font-bold tracking-tight">
-        EL VEJIGANTE
-      </h3>
-
-      <p class="mt-3 text-lg text-neutral-500">
-        Supporting Actor • 2024
-      </p>
-
-    </div>
-
-
-    <!-- VIDEO -->
-    <div class="w-full h-120 aspect-video rounded-3xl overflow-hidden shadow-xl bg-neutral-100">
-
-      <iframe class="h-full w-full" src="https://www.youtube.com/embed/ny9cwvveL9I?si=7hReF_GzFd-BSAZx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-    </div>
-
-
-    <!-- DESCRIPTION -->
-    <p class="mt-6 text-neutral-500 leading-relaxed">
-      A featured acting project showcasing my role as a Supporting actor
-      in the 2024 production of EL VEJIGANTE.
-    </p>
-
-  </div>
-
-</article>
+      }
 
     </section>
     
   </div>
 
-<app-lightbox #lightbox></app-lightbox>
+  <app-lightbox #lightbox></app-lightbox>
 
   `
 })
-export class projectsPage {}
+
+
+export class projectsPage implements OnInit {
+
+  projects: {
+    title: string;
+    image: string;
+    role: string;
+    year: string;
+    video: SafeResourceUrl;
+    description: string;
+    hoverColor: string;
+  }[] = [];
+
+
+  constructor(private sanitizer: DomSanitizer) {}
+
+
+  ngOnInit() {
+
+    this.projects = [
+
+      {
+        title: 'Capicú',
+        image: '/projectIMG/p1.jpg',
+        role: 'Supporting Actor',
+        year: '2025',
+
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/wR9k0yib_Gc'
+        ),
+
+        description:
+          'A featured acting project showcasing my role as a supporting actor in the 2025 production of Capicú.',
+
+        hoverColor:
+          'hover:bg-gradient-to-tl hover:from-[#ff7f00]/70'
+      },
+
+
+      {
+        title: 'Canvas',
+        image: '/projectIMG/p2.jpg',
+        role: 'Lead Actor',
+        year: '2020',
+
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/QbGVXNp2IoM'
+        ),
+
+        description:
+          'A featured acting project showcasing my role as a Lead actor in the 2020 production of Canvas.',
+
+        hoverColor:
+          'hover:bg-gradient-to-tl hover:from-[#fab41b]/70'
+      },
+
+
+      {
+        title: 'LASESIÓN',
+        image: '/projectIMG/p3.jpg',
+        role: 'Lead Actor • Director',
+        year: '2021',
+
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/m57Zj9IaSEo'
+        ),
+
+        description:
+          'A featured acting project showcasing my role as a Lead actor and Director in the 2021 production of LASESIÓN.',
+
+        hoverColor:
+          'hover:bg-gradient-to-tl hover:from-[#8a4980]/70'
+      },
+
+
+      {
+        title: 'The Monolith',
+        image: '/projectIMG/p4.jpg',
+        role: 'Lead Actor',
+        year: '2022',
+
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/PmytmH0JD8E'
+        ),
+
+        description:
+          'A featured acting project showcasing my role as a Lead actor in the 2022 production of The Monolith.',
+
+        hoverColor:
+          'hover:bg-gradient-to-tl hover:from-[#000]/70'
+      },
+
+
+      {
+        title: 'TEETH & GLASS',
+        image: '/projectIMG/p5.jpg',
+        role: 'Supporting Actor',
+        year: '2026',
+
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/nmLfAzkCJE8'
+        ),
+
+        description:
+          'A featured acting project showcasing my role as a Supporting actor in the 2026 production of TEETH AND GLASS.',
+
+        hoverColor:
+          'hover:bg-gradient-to-tl hover:from-[#5f0503]/70'
+      },
+
+
+      {
+        title: 'Entre Colmillos',
+        image: '/projectIMG/p6.jpg',
+        role: 'Supporting Actor',
+        year: '2023',
+
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/uYF2ANUUynQ'
+        ),
+
+        description:
+          'A featured acting project showcasing my role as a Supporting actor in the 2023 production of Entre Colmillos.',
+
+        hoverColor:
+          'hover:bg-gradient-to-tl hover:from-[#ba0001]/70'
+      },
+
+
+      {
+        title: 'EL VEJIGANTE',
+        image: '/projectIMG/p7.jpeg',
+        role: 'Supporting Actor',
+        year: '2024',
+
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/ny9cwvveL9I'
+        ),
+
+        description:
+          'A featured acting project showcasing my role as a Supporting actor in the 2024 production of EL VEJIGANTE.',
+
+        hoverColor:
+          'hover:bg-gradient-to-tl hover:from-[#1597f5]/70'
+      }
+
+    ];
+
+  }
+
+}

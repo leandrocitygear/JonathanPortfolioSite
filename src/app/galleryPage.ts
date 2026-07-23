@@ -9,10 +9,10 @@ import { LightboxComponent } from "./lightboxComponent";
   template: `
 
     <div class="min-h-screen pt-30">
-       <div class="flex flex-wrap justify-center">
+       <div class="flex flex-wrap flex-row justify-center p-4 sm:p-0">
        @for (image of images; track image) {
 
-        <img [src]="image" (click)="lightbox.open(image)" class="rounded-3xl hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer m-5">
+        <img [src]="image" (click)="lightbox.open(image)" class="rounded-3xl hover:scale-105 transition duration-500 sm:h-125 h-30 shadow-2xl/50 cursor-pointer m-1 sm:m-5">
         }
       </div>
     </div>

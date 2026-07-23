@@ -32,7 +32,7 @@ import { Component } from '@angular/core';
           <!-- LEFT SIDE -->
           <div class="space-y-10">
 
-            <div class="flex gap-6">
+            <div class="flex flex-col sm:flex-row gap-6">
             <div class="block">
               <p class="text-sm text-neutral-500 uppercase tracking-widest mb-2">
                 Email
@@ -175,7 +175,8 @@ import { Component } from '@angular/core';
                 type="submit"
                 class="group w-full bg-black text-white rounded-full py-5
                        flex items-center justify-center gap-3
-                      hover:bg-gradient-to-tr hover:from-orange-500/90 hover:to-black 
+                      sm:hover:bg-gradient-to-tr sm:hover:from-orange-500/75 sm:hover:to-black 
+                      bg-gradient-to-tr from-orange-500/75 to-black 
                        transition-colors duration-800 cursor-pointer"
               >
 

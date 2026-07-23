@@ -9,22 +9,35 @@ import { LightboxVideoComponent } from "./lightboxVideoComponent";
     imports: [RouterLink, LightboxComponent, LightboxVideoComponent],
     template: `
 <div class="min-h-screen bg-[#fafafa] text-neutral-900">
+
 <!-- HERO -->
 
-<section class="pt-32 px-8 max-w-7xl mx-auto">
+<section class="pt-32 px-4 sm:px-8 lg:px-18 max-w-7xl mx-auto">
 
-  <div class="grid lg:grid-cols-2 gap-16 items-center">
+  <div class="flex flex-col lg:flex-row gap-16 items-center">
 
   <!-- LEFT -->
 
-  <div>
-    <p class="text-sm uppercase tracking-[6px] text-neutral-500">Actor / Performer</p>
-    <h2 class="mt-8 text-7xl lg:text-8xl font-bold leading-[0.9]">
+  <div class="w-full lg:w-1/2 min-w-0">
+
+    <p class="text-sm uppercase tracking-[6px] text-neutral-500">
+      Actor / Performer
+    </p>
+
+    <h2 class="mt-8 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.9] break-all">
+
       Creating
-    <br>
-    <span class="text-neutral-400">unforgettable</span>
-    <br>
+
+      <br>
+
+      <span class="text-neutral-400">
+        unforgettable
+      </span>
+
+      <br>
+
       characters.
+
     </h2>
 
     <p class="mt-8 max-w-xl text-lg text-neutral-600">
@@ -38,15 +51,19 @@ import { LightboxVideoComponent } from "./lightboxVideoComponent";
       Name: Best Actor in a Short Film, Ponte Los Cortos Festival 2020
     </p>
 
-    <div class="flex gap-5 mt-10">
+    <div class="flex flex-wrap gap-5 mt-10">
 
-      <button class="px-8 py-4 rounded-full bg-black text-white hover:scale-105 transition cursor-pointer hover:bg-gradient-to-r from-red-500"
-      (click)="lightboxVideo.open('https://www.youtube.com/embed/JJ5yZuZezU8?si=Llv6Ur61QDJRa3bb')"
+      <button
+        class="px-8 py-4 rounded-full bg-black text-white hover:scale-105 transition cursor-pointer hover:bg-gradient-to-r from-red-500"
+        (click)="lightboxVideo.open('https://www.youtube.com/embed/JJ5yZuZezU8?si=Llv6Ur61QDJRa3bb')"
       >
         Watch Reel
       </button>
 
-      <button routerLink="/projects" class="px-8 py-4 rounded-full cursor-pointer border hover:scale-105 transition hover:bg-gradient-to-l from-purple-500 hover:bg-black hover:text-white">
+      <button
+        routerLink="/projects"
+        class="px-8 py-4 rounded-full cursor-pointer border hover:scale-105 transition hover:bg-gradient-to-l from-purple-500 hover:bg-black hover:text-white"
+      >
         View Work
       </button>
 
@@ -54,13 +71,20 @@ import { LightboxVideoComponent } from "./lightboxVideoComponent";
 
   </div>
 
+
   <!-- IMAGE -->
 
-  <div class="relative">
+  <div class="relative w-full lg:w-1/2 min-w-0">
 
     <div class="absolute inset-0 bg-black/10 rounded-3xl blur-3xl"></div>
-      <img src="./images/home_img.jpg" (click)="lightbox.open('./images/home_img.jpg')" class="relative rounded-3xl shadow-2xl w-full object-cover hover:scale-105 transition duration-500 cursor-pointer">
-    </div>
+
+    <img
+      src="./images/home_img.jpg"
+      (click)="lightbox.open('./images/home_img.jpg')"
+      class="relative rounded-3xl shadow-2xl w-full max-w-full object-cover hover:scale-105 transition duration-500 cursor-pointer"
+    >
+
+  </div>
 
   </div>
 
@@ -134,11 +158,11 @@ import { LightboxVideoComponent } from "./lightboxVideoComponent";
       Selected Work
     </h2>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 justify-items-center gap-8">
 
       <div class="group">
 
-        <img src="/projectIMG/p1.jpg" (click)="lightbox.open('/projectIMG/p1.jpg')" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
+        <img src="/projectIMG/p1.jpg" (click)="lightbox.open('/projectIMG/p1.jpg')" class="rounded-3xl group-hover:scale-105 transition duration-500 w-80 sm:w-100 h-100 sm:h-125 shadow-2xl/50 cursor-pointer">
 
         <div class="mt-5">
 
@@ -156,7 +180,7 @@ import { LightboxVideoComponent } from "./lightboxVideoComponent";
 
       <div class="group">
 
-        <img src="/projectIMG/p2.jpg" (click)="lightbox.open('/projectIMG/p2.jpg')" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
+        <img src="/projectIMG/p2.jpg" (click)="lightbox.open('/projectIMG/p2.jpg')" class="rounded-3xl group-hover:scale-105 transition duration-500 w-80 sm:w-100 h-100 sm:h-125 shadow-2xl/50 cursor-pointer">
 
         <h3 class="mt-5 text-2xl font-bold">
             Canvas
@@ -170,7 +194,7 @@ import { LightboxVideoComponent } from "./lightboxVideoComponent";
 
       <div class="group">
 
-        <img src="/projectIMG/p3.jpg" (click)="lightbox.open('/projectIMG/p3.jpg')" class="rounded-3xl group-hover:scale-105 transition duration-500 h-125 shadow-2xl/50 cursor-pointer">
+        <img src="/projectIMG/p3.jpg" (click)="lightbox.open('/projectIMG/p3.jpg')" class="rounded-3xl group-hover:scale-105 transition duration-500 w-80 sm:w-100 h-100 sm:h-125 shadow-2xl/50 cursor-pointer">
 
         <h3 class="mt-5 text-2xl font-bold">
             LASESIÓN
