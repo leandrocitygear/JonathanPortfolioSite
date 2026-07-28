@@ -230,6 +230,40 @@ export class projectsPage implements OnInit {
 
         hoverColor:
           'hover:bg-gradient-to-tl hover:from-[#1597f5]/70'
+      },
+
+      {
+        title: 'Cogiendo Boquetes',
+        image: '/projectIMG/p8.jpeg',
+        role: 'Supporting Actor',
+        year: '2024',
+
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/J2OzSJj4PPI?si=YmIfx11ovJ8fRc0K'
+        ),
+
+        description:
+          'A featured acting project showcasing my role as a Supporting actor in the 2024 production of Cogiendo Boquetes.',
+
+        hoverColor:
+          'hover:bg-gradient-to-tl hover:from-[#ffd200]/70'
+      },
+
+      {
+        title: 'GTA in Real Life',
+        image: '/projectIMG/p9.jpg',
+        role: 'Supporting Actor',
+        year: '2025',
+
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/JyKZL76Cv3M?si=0NuvxuBoCrnj3l90'
+        ),
+
+        description:
+          'A featured acting project showcasing my role as a Supporting actor in the 2025 production of GTA in Real Life.',
+
+        hoverColor:
+          'hover:bg-gradient-to-tl hover:from-[#a60404]/70'
       }
 
     ];
