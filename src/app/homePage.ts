@@ -18,7 +18,7 @@ import { LightboxVideoComponent } from "./lightboxVideoComponent";
 
   <!-- LEFT -->
 
-  <div class="w-full lg:w-1/2 min-w-0">
+  <div class="w-full md:w-1/2 min-w-0">
 
     <p class="text-sm uppercase tracking-[6px] text-neutral-500">
       Actor / Performer
