@@ -173,7 +173,7 @@ import { Component } from '@angular/core';
               <!-- BUTTON -->
               <button
                 type="submit"
-                class="group w-full bg-black text-white rounded-full py-5
+                class="group w-full bg-black sm:bg-black text-white rounded-full py-5
                        flex items-center justify-center gap-3
                       sm:hover:bg-gradient-to-tr sm:hover:from-orange-500/75 sm:hover:to-black 
                       bg-gradient-to-tr from-orange-500/75 to-black 

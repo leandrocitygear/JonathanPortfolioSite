@@ -51,7 +51,10 @@ export class galleryPage {
     'images/g27.jpg',
     'images/g28.jpg',
     'images/g29.jpg',
-    'images/g30.jpg'
+    'images/g30.jpg',
+    'images/g31.jpg',
+    'images/g32.jpg',
+    'images/g33.jpg'
   ];
 
   ngOnInit() {

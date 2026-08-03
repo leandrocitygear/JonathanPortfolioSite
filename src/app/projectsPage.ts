@@ -264,6 +264,23 @@ export class projectsPage implements OnInit {
 
         hoverColor:
           'hover:bg-gradient-to-tl hover:from-[#a60404]/70'
+      },
+
+      {
+        title: 'I Heard The Disk',
+        image: '/projectIMG/p10.jpg',
+        role: 'Supporting Actor',
+        year: '2024',
+
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/fIYr2pPfH1k?si=olJ3CWt-0PINtWWr'
+        ),
+
+        description:
+          'A featured acting project showcasing my role as a Supporting actor in the 2024 production of I Heard The Disk.',
+
+        hoverColor:
+          'hover:bg-gradient-to-tl hover:from-[#a17c01]/70'
       }
 
     ];
