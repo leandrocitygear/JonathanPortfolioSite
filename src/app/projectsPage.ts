@@ -273,7 +273,7 @@ export class projectsPage implements OnInit {
         year: '2024',
 
         video: this.sanitizer.bypassSecurityTrustResourceUrl(
-          'https://www.youtube.com/embed/fIYr2pPfH1k?si=olJ3CWt-0PINtWWr'
+          'https://player.vimeo.com/video/1226190901?badge=0&autopause=0&player_id=0&app_id=58479'
         ),
 
         description:
