@@ -84,7 +84,7 @@ export class ProjectsPage implements OnInit {
           'https://www.youtube.com/embed/TilU7AiaIP4'
         ),
         description:
-          'A featured acting project showcasing my role as a actor in the 2026 production of Los Esmayaos Restaurantes.',
+          'A featured acting project showcasing my role as a actor and voice actor in the 2026 production of Los Esmayaos Restaurantes.',
         hoverColor: 'hover:bg-gradient-to-tl hover:from-[#f9d32a]/70',
       },
       {
