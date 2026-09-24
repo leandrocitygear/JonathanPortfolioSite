@@ -78,7 +78,7 @@ export class ProjectsPage implements OnInit {
       {
         title: 'Los Esmayaos Restaurantes',
         image: '/projectIMG/p11.jpg',
-        role: 'Actor',
+        role: 'Actor/Voice Actor',
         year: '2026',
         video: this.sanitizer.bypassSecurityTrustResourceUrl(
           'https://www.youtube.com/embed/TilU7AiaIP4'
