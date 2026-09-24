@@ -76,6 +76,18 @@ export class ProjectsPage implements OnInit {
   ngOnInit(): void {
     this.projects = [
       {
+        title: 'Los Esmayaos Restaurantes',
+        image: '/projectIMG/p11.jpg',
+        role: 'Actor',
+        year: '2026',
+        video: this.sanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/TilU7AiaIP4'
+        ),
+        description:
+          'A featured acting project showcasing my role as a actor in the 2026 production of Los Esmayaos Restaurantes.',
+        hoverColor: 'hover:bg-gradient-to-tl hover:from-[#f9d32a]/70',
+      },
+      {
         title: 'Capicú',
         image: '/projectIMG/p1.jpg',
         role: 'Supporting Actor',
